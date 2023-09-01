@@ -1,0 +1,7 @@
+  all:
+  
+   hosts:
+    once.com:
+    two.com:
+  target1:
+  target2:

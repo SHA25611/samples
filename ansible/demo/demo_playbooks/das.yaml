@@ -1,0 +1,25 @@
+---
+- hosts: "prod-australia"
+  user: root
+  
+  tasks:
+
+    - name: set var
+      command: ps auxwww
+      register: psout
+
+    - debug:
+        msg: "{{ psout.stdout | regex_findall('.*evolution.*|.*dbus-daemon.*') }}"
+#      when: "{{ item | regex_search('.*evolution.*') }}"
+#      with_items:  "{{ psout.stdout_lines }}"
+        
+
+    - name: list files in folder in /vishal
+      command: which python3.8
+      register: thisisoutputofls
+#      no_log: yes
+
+    - debug:
+        msg: "The server {{ inventory_hostname }} has python3.8 on this location {{ thisisoutputofls.stdout }}"
+
+

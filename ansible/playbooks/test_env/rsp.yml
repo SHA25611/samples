@@ -1,0 +1,19 @@
+
+---
+   # Play to create rsp file
+   - name: create response file  
+     hosts: new_addition
+     tasks:
+        - name: create rsp file 
+          file:
+           path: /wlsadm/wlsinstall.rsp
+           state: touch
+           mode: '1755'
+
+        - name: add content to rsp file
+          copy:
+             dest: /wlsadm/wlsinstall.rsp
+             content: |
+               ORACLE_HOME=/wlsadm/ORACLE_HOME
+               INSTALL_TYPE=WebLogic Server
+...

@@ -1,0 +1,10 @@
+#Enter the product details below
+
+wlshome: /app/weblogic/vodafone/prod
+jdkhome: /app/jdk/prod
+
+#Enter the port numbers that you want the firewall to be opened.
+
+wlsport: 7001
+
+

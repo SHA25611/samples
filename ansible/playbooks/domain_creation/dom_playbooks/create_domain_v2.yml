@@ -1,0 +1,83 @@
+---
+
+# This Playbook is responsible for domain creation in the infrastructure
+# as per the configuration parameters entered in the the wls_config file.
+# It contains plays to pull domain servers information and then perform domain creation 
+
+# Play1 - To do pre-requisite checks befor starting domain creation
+- name: Check if local user is wlsadm or not
+  hosts: localhost
+  connection: local
+  gather_facts: yes
+
+  tasks:
+    - name: Pre-requisite check for local user
+      debug:
+        msg: | 
+          " The execution may fail, if the local user is not wlsadm. If it fails please make sure to switch to wlsadm user"
+      failed_when: ansible_facts['user_id'] != "wlsadm"
+   
+# Play2 - To run the export server script on local host 
+- name: Run export_server.py to create domain servers var file 
+  hosts: localhost
+  vars:
+    ansible_become_pass: solarflare@1234!   # ansible_become_pass is special pre defined variable and should be always declared this way for sudo switching
+  become: yes
+  become_user: root 
+
+  tasks:  
+    - name: Running the export_server.py script using shell module
+      shell:
+          "python export_servers.py"
+      args:
+        chdir: "/etc/ansible/playbooks/domain_creation/wl_scripts/"
+
+      register: output
+
+    - name: logging output
+      debug:
+        msg: "{{ output.stdout_lines }}"    
+
+# Play3 - To transfer the domain creation scripts on domain servers and doing neccessary execution
+- name: Transfering and running scripts on admin server
+  vars_files: /etc/ansible/playbooks/playbook_variables/dom_var.yml
+  hosts: "{{ admin_server }}"
+
+  tasks:
+    - name: using ansible copy module to transfer files
+      copy:
+        src: "{{ item.key }}"
+        dest: "{{ item.value }}"
+        #owner: wlsadm
+        #group: wlsadm
+        #mode: '1755'
+        force: yes
+        backup: yes
+      loop: "{{ path_dict | dict2items }}"
+      vars:
+        path_dict:
+             /etc/ansible/playbooks/domain_creation/wl_scripts/wls_config.py: /wlsadm/ORACLE_HOME/wlserver/common/templates/scripts/wlst/
+             /etc/ansible/playbooks/domain_creation/wl_scripts/create_domain.py: /wlsadm/ORACLE_HOME/wlserver/common/templates/scripts/wlst/
+      register: trnf_data
+
+
+    - name: using ansible shell module to run setWLSEnv.sh on admin server for execution environment setup
+      shell: |
+         echo we are about to set up the environment and start domain creation
+      register: env_data
+
+    - name: logging output using debug module
+      debug:
+         msg: |
+           "{{ trnf_data }}"
+           "{{ env_data }}"
+    
+
+
+
+
+
+
+
+
+...

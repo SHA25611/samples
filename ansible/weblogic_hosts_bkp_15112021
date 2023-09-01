@@ -1,0 +1,21 @@
+
+
+ all:
+    hosts:
+       target-host-01:
+       target-host-02:
+       target-host-03:
+       target-host-04:
+ new_addition:
+    hosts:
+     
+      
+       
+       target-host-05:
+       
+  
+    vars: 
+     mw_user: wlsadm
+     mw_pass: solarflare@123!
+     mw_grp: weblogic
+     mw_grps: wheel

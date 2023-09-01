@@ -1,0 +1,25 @@
+---
+
+ # Testing var file for variable hosts
+
+   # play1 - Test ping the host mentioned in var file
+   - name: test ping variable hosts
+     # include_vars:
+     vars_files: /etc/ansible/playbooks/test_env/dom_host.yml
+     hosts: "{{ managed_servers }}"
+    
+     tasks:
+        - name: ping 
+          ping:
+  
+   # play2 - Test ping managed servers
+   - name: test ping managed servers
+     vars_files: /etc/ansible/playbooks/test_env/dom_host.yml
+     hosts: "{{ admin_server }}"
+
+     tasks:
+        - name: ping
+          ping:
+
+
+...

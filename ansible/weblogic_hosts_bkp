@@ -1,0 +1,5 @@
+
+all:
+   hosts:
+     target-host-01:
+     target-host-02:

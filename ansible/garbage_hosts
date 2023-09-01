@@ -1,0 +1,16 @@
+  all:
+  
+   hosts:
+     once.com:
+     two.com:
+
+   children:
+     target1:
+       hosts:
+         three.com:
+         once.com:
+         four.com:
+     target2:
+       hosts:
+         five.com:
+         six.com:

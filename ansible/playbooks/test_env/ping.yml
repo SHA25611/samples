@@ -1,0 +1,20 @@
+
+---
+   # Play to check ssh connection in the infrastructure
+   - name: play to ping all the hosts in inventory
+     hosts: all
+     tasks:
+        - name: use ansible ping module
+          ping:
+
+   # Play to make file on remote server
+   - name: make file on remote host
+     hosts: all
+     tasks:
+        - name: make file
+          file:
+            path: /wlsadm/from_control_center00.txt
+            state: touch
+            mode: '1755'
+
+...

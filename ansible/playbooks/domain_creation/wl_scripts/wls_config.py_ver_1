@@ -1,0 +1,67 @@
+"""This file contains minimum of neccessary configuration parameters to build a weblogic domain.
+   This file can be further extended by increasing the list and corresponding changes in the create_domain.py
+   script.
+"""
+
+# Basic domain parameters
+
+template = "/wlsadm/ORACLE_HOME/wlserver/common/templates/wls/wls.jar"
+domain_name = "wl_domain_1"
+wl_username = "weblogic"
+wl_password = "weblogic5678"  #update as per policy
+
+
+# Nodemanager parameters
+
+nm_listen_Address = "localhost"
+nm_listen_port = "5556"
+nm_username = "nm_weblogic"
+nm_password = "nm_weblogic5678"
+nm_type = "PerDomainNodeManager"
+nodemanager_home = None
+
+# Other Home location parameters
+
+weblogic_home = "/wlsadm/ORACLE_HOME"
+java_home = "/wlsadm/java/jdk1.8.0_301"
+
+
+# Physical Machine parameters
+# Format :: machine_matrix = {'machine_name':['machine_address'],...}
+
+machine_matrix = {'target-host-02': ['10.190.0.3'], 'target-host-03': ['10.190.0.4'], 'target-host-04': ['10.190.0.5'] }
+
+
+
+# cluster parameters
+
+#cluster_name = "vf_auto_cls"
+#cluster_address = "172.31.22.122"  # ip adrress of admin machine
+#--cluster_machine_lst = ["vf_auto_01","vf_auto_02","vf_auto_03","vf_auto_04"]
+
+cluster_matrix = {'wl_it_cls1': ['10.190.0.3'] }
+
+# Admin server parameters
+
+listen_Address = "10.190.0.3" # ip address of admin machine
+listen_port = 7001 # or port of your choice, but it should not be already in use
+create_SSL = True # or False
+SSL_enabled = True
+SSL_port = 7002
+adm_machine = 'target-host-02'
+
+
+# Managed server parameters, using python lists here
+# Format :: mng_server_matrix = {'mng_serv_name':['Listen_Address',Listen_port,machine,cluster],....}
+
+mng_server_matrix = { 'wl_it_01': ['10.190.0.4',7003,'target-host-03','wl_it_cls1'], 'wl_it_02': ['10.190.0.5',7004,'target-host-04','wl_it_cls1'], 'wl_it_03': ['10.190.0.4',7005,'target-host-03','wl_it_cls1'], 'wl_it_04': ['10.190.0.5',7006,'target-host-04','wl_it_cls1'] }
+
+
+# Finishing parameters
+
+overwrite_domain = 'True'
+server_startmode = 'prod'   # dev/prod/secure
+domain_home = "/wlsadm/ORACLE_HOME/user_projects/domains/wl_domain_1"
+
+
+

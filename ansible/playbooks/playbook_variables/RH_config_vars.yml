@@ -1,0 +1,6 @@
+--- 
+  # Defining remote host configuration variables.
+  remote_host: target-host-03
+  password_wlsadm: solarflare@123!
+
+...

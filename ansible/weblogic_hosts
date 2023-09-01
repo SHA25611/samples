@@ -1,0 +1,21 @@
+
+
+ all:
+    hosts:
+       10.190.0.3:
+       10.190.0.4:
+       10.190.0.5:
+ new_addition:
+    hosts:
+       10.190.0.3:
+       10.190.0.4:
+       10.190.0.5:  
+      
+     
+       
+  
+    vars: 
+     mw_user: wlsadm
+     mw_pass: solarflare@123!
+     mw_grp: weblogic
+     mw_grps: wheel

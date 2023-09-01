@@ -1,0 +1,39 @@
+---
+- hosts: "prod-australia"
+#  any_errors_fatal: true
+  user: root
+  
+  tasks:
+
+
+    - debug:
+        msg: "OS is {{ ansible_distribution }} having version {{ ansible_distribution_version }} and Major version {{ ansible_distribution_major_version }}" 
+
+    - debug:
+        msg: "Here are the details of {{ inventory_hostname }}: {{ item }}"
+      loop:
+        - "{{ ansible_distribution }}"
+        - "{{ ansible_distribution_version }}"
+        - "{{ ansible_distribution_major_version }}"
+
+    - raw: "ps auxwww | grep system"
+      register: psout
+
+    - debug:
+        msg: "Print whole variable {{ psout }}"
+
+    - debug:
+        msg: "This process runs on {{ inventory_hostname }}: {{ item }}"
+      with_items: "{{ psout.stdout_lines }}"
+
+    - debug:
+        msg: "this task ran on {{ inventory_hostname }}"
+      when: inventory_hostname == '52.140.113.192' and ansible_distribution == 'RedHat'
+
+
+
+    - debug:
+        msg: " I will now start my Databases"
+
+
+

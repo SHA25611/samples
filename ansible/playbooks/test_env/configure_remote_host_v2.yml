@@ -1,0 +1,139 @@
+--- 
+ # Always run this playbook as root. This playbook is dedicated 
+ # to configure the newly prepared host machine for integration 
+ # with the weblogic infrastructure environment. it will indure 
+ # that the machine is exactly conditioned for carrying out web
+ # Logic installation.
+
+   # Play1 - To create common user on remote host
+   - name: Creating mw_user user on the remote host
+    # vars_files: /etc/ansible/playbooks/playbook_variables/RH_config_vars.yml
+     hosts: new_addition
+     
+     tasks:
+       - name: using ansible group module to add group weblogic
+         group:
+           name: "{{mw_grp}}"
+           state: present
+         register: grp_op   
+
+       - name: using ansible user module to create user
+         user:
+           name: "{{mw_user}}"
+           password: "{{ mw_pass | password_hash('sha512') }}"
+           state: present 
+           group: "{{mw_grp}}"
+           groups: "{{mw_grps}}"
+         register: user_op
+ 
+       - name: using debug module to get the outputs of tasks
+         debug:
+           msg: |
+              "{{ grp_op }}"
+              "{{ user_op }}" 
+           
+   # Play2 - To establish passwordless ssh connection from center to remote host for mw_user
+   - name: updating authorized keys of mw_user on remote host
+     hosts: new_addition
+  
+     tasks:
+       - name: using authorized_key module to transfer keys
+         authorized_key:
+               user: "{{mw_user}}"
+               state: present
+               key: "{{ lookup('file','/home/{{mw_user}}/.ssh/id_rsa.pub') }}" 
+        
+   # Play3 - To create the directory structure for weblogic installation
+   - name: creating weblogic directory structure
+     hosts: new_addition
+
+     tasks:
+       - name: use ansible file module to create wlsadm folder
+         file:
+           path: /wlsadm
+           state: directory
+           mode: '1755'
+   
+       - name: use file module to create java folder inside wlsadm folder
+         file: 
+           path: /wlsadm/java
+           state: directory
+           mode: '1755'
+       - name: use file module to create weblogic folder inside wlsadm folder
+         file:
+           path: /wlsadm/weblogic
+           state: directory
+           mode: '1755'
+
+       - name: use file module to create inventory folder inside wlsadm folder
+         file:
+           path: /wlsadm/inventory
+           state: directory
+           mode: '1755'
+
+   # Play4 - To make system configuration changes on disks
+   - name: Initiating a sequence of tasks to create swap space on remote host
+     hosts: new_addition
+
+     tasks:
+       - name: use ansible shell module to make the swap file (task1)
+         shell:
+            " dd if=/dev/sda2 of=/swapfile bs=1024 count=1048576 "
+         register: cmd1_stdout
+        
+       - name: again using shell module further commands (task2)
+         shell: 
+            " mkswap /swapfile "
+         register: cmd2_stdout
+       
+       - name: shell module for third command (task3)
+         shell:
+            " swapon -a /swapfile "
+         register: cmd3_stdout
+
+       - name: using debug module to get the command outputs
+         debug:
+           msg: |
+              "{{ cmd1_stdout }}"
+              "{{ cmd2_stdout }}"
+              "{{ cmd3_stdout }}"
+
+   # Play5 - To change the ownership of weblogic directory tree
+   - name: changing ownership of weblogic directory tree
+     hosts: new_addition
+
+     tasks:
+       - name: using shell module to execute chown command
+         shell:
+            " chown -R wlsadm:weblogic /wlsadm "
+         register: cmd4_stdout
+
+       - name: using debug module to get output
+         debug: 
+           msg: "{{ cmd4_stdout }}"    
+
+
+
+
+
+   # New remote host system configuration complete.
+       
+            
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+       
+              
+
+...

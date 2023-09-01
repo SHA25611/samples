@@ -1,0 +1,7 @@
+    - name: Loop against attributes
+      include_vars: "{{ playbook_dir }}/empvars_{{ item }}.yml"
+      
+    - name: List variables
+      debug:
+        msg: "{{ item }} age is {{ age }}\n {{ item }} grade is {{ grade }} \n {{ item }} knows {{ technology }}\n {{ item }} resides in {{ city }}"
+

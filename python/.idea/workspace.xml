@@ -1,0 +1,276 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="e7771f96-990d-4b80-83e9-a26375bbb517" name="Default Changelist" comment="" />
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Python Script" />
+      </list>
+    </option>
+  </component>
+  <component name="ProjectId" id="1a4aIJXwfJCvAL1dhFNTzBPKXOJ" />
+  <component name="PropertiesComponent">
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
+  </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
+  <component name="RunManager" selected="Python.main (1)">
+    <configuration name="Rough" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="AUTOPTIMIZER" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/root_folder/main_files" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/root_folder/main_files/Rough.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="main (1)" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="AUTOPTIMIZER" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/root_folder/main_files" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/root_folder/main_files/main.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="optimization_algorithm" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="AUTOPTIMIZER" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/root_folder/___GA__" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/root_folder/___GA__/optimization_algorithm.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="rough" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="AUTOPTIMIZER" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/root_folder/___GA__" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/root_folder/___GA__/rough.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="rough2" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="AUTOPTIMIZER" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/root_folder/main_files" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/root_folder/main_files/rough2.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Python.main (1)" />
+        <item itemvalue="Python.Rough" />
+        <item itemvalue="Python.rough2" />
+        <item itemvalue="Python.rough" />
+        <item itemvalue="Python.optimization_algorithm" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="e7771f96-990d-4b80-83e9-a26375bbb517" name="Default Changelist" comment="" />
+      <created>1585997238907</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1585997238907</updated>
+      <workItem from="1585997247555" duration="1042000" />
+      <workItem from="1586066440611" duration="5237000" />
+      <workItem from="1586081239639" duration="5301000" />
+      <workItem from="1586151678386" duration="5016000" />
+      <workItem from="1586162471561" duration="7092000" />
+      <workItem from="1586170585356" duration="687000" />
+      <workItem from="1586171522148" duration="99000" />
+      <workItem from="1586171772337" duration="3073000" />
+      <workItem from="1586184360039" duration="6545000" />
+      <workItem from="1586194269749" duration="1820000" />
+      <workItem from="1586230138465" duration="15584000" />
+      <workItem from="1586256127026" duration="4336000" />
+      <workItem from="1586274246853" duration="2389000" />
+      <workItem from="1586323496286" duration="3952000" />
+      <workItem from="1586328853376" duration="5063000" />
+      <workItem from="1586336582474" duration="7741000" />
+      <workItem from="1586349736164" duration="12809000" />
+      <workItem from="1586365333268" duration="792000" />
+      <workItem from="1586405627465" duration="14355000" />
+      <workItem from="1586434994891" duration="2715000" />
+      <workItem from="1586448115537" duration="2449000" />
+      <workItem from="1586458291847" duration="865000" />
+      <workItem from="1586620291625" duration="468000" />
+      <workItem from="1586671792165" duration="1916000" />
+      <workItem from="1587101124723" duration="1429000" />
+      <workItem from="1587191575117" duration="651000" />
+      <workItem from="1587224906032" duration="467000" />
+      <workItem from="1587480658929" duration="3895000" />
+      <workItem from="1587488937579" duration="1407000" />
+      <workItem from="1587496713110" duration="506000" />
+      <workItem from="1587541161133" duration="1010000" />
+      <workItem from="1587789893265" duration="149000" />
+      <workItem from="1587797995161" duration="1565000" />
+      <workItem from="1587801920861" duration="1731000" />
+      <workItem from="1587810717953" duration="3759000" />
+      <workItem from="1587829995065" duration="370000" />
+      <workItem from="1587879933974" duration="5687000" />
+      <workItem from="1587890251803" duration="2725000" />
+      <workItem from="1587898867696" duration="5813000" />
+      <workItem from="1587922387110" duration="2665000" />
+      <workItem from="1587966922480" duration="594000" />
+      <workItem from="1587976977772" duration="507000" />
+      <workItem from="1587985890369" duration="4065000" />
+      <workItem from="1587995406279" duration="7637000" />
+      <workItem from="1588006797867" duration="5377000" />
+      <workItem from="1588014997879" duration="7912000" />
+      <workItem from="1588050676880" duration="9669000" />
+      <workItem from="1588071025659" duration="6593000" />
+      <workItem from="1588079765462" duration="9795000" />
+      <workItem from="1588094342480" duration="858000" />
+      <workItem from="1588146826679" duration="511000" />
+      <workItem from="1588150060553" duration="10694000" />
+      <workItem from="1588181968921" duration="5870000" />
+      <workItem from="1588220800056" duration="9178000" />
+      <workItem from="1588236219630" duration="9028000" />
+      <workItem from="1588255644724" duration="6051000" />
+      <workItem from="1588269295360" duration="4456000" />
+      <workItem from="1588308555990" duration="8380000" />
+      <workItem from="1588321277624" duration="6450000" />
+      <workItem from="1588356498607" duration="2662000" />
+      <workItem from="1588399753702" duration="4299000" />
+      <workItem from="1588413400460" duration="2534000" />
+      <workItem from="1588417366447" duration="7156000" />
+      <workItem from="1588427209329" duration="6263000" />
+      <workItem from="1588442333333" duration="4026000" />
+      <workItem from="1588480220273" duration="4691000" />
+      <workItem from="1588488698208" duration="111000" />
+      <workItem from="1588490344487" duration="690000" />
+      <workItem from="1588495285517" duration="691000" />
+      <workItem from="1588498577143" duration="2591000" />
+      <workItem from="1588511424819" duration="1024000" />
+      <workItem from="1588520876901" duration="2099000" />
+      <workItem from="1588524168959" duration="3944000" />
+      <workItem from="1588565294794" duration="13822000" />
+      <workItem from="1588583902873" duration="5239000" />
+      <workItem from="1588597659567" duration="11140000" />
+      <workItem from="1588610927094" duration="277000" />
+      <workItem from="1588651107408" duration="8533000" />
+      <workItem from="1588664186255" duration="5633000" />
+      <workItem from="1588675124343" duration="5688000" />
+      <workItem from="1588691500951" duration="2421000" />
+      <workItem from="1588747013945" duration="11311000" />
+      <workItem from="1588760195992" duration="5621000" />
+      <workItem from="1588772065678" duration="7142000" />
+      <workItem from="1588782083462" duration="12694000" />
+      <workItem from="1588798624542" duration="538000" />
+      <workItem from="1588827446848" duration="9162000" />
+      <workItem from="1588838584057" duration="16485000" />
+      <workItem from="1588858166615" duration="7811000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/AUTOPTIMIZER$__main__.coverage" NAME="__main__ Coverage Results" MODIFIED="1586169721994" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/main_files" />
+    <SUITE FILE_PATH="coverage/AUTOPTIMIZER$vector_parameters__1_.coverage" NAME="vector_parameters (1) Coverage Results" MODIFIED="1586174121666" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/root_folder/program_data/variable_parameters_data" />
+    <SUITE FILE_PATH="coverage/AUTOPTIMIZER$rough.coverage" NAME="rough Coverage Results" MODIFIED="1588424424799" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/root_folder/___GA__" />
+    <SUITE FILE_PATH="coverage/AUTOPTIMIZER$optimization_algorithm.coverage" NAME="optimization_algorithm Coverage Results" MODIFIED="1588187170113" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/root_folder/___GA__" />
+    <SUITE FILE_PATH="coverage/AUTOPTIMIZER$user_spec.coverage" NAME="user_spec Coverage Results" MODIFIED="1586340882512" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/root_folder/program_data/program_inputs/main_inputs" />
+    <SUITE FILE_PATH="coverage/AUTOPTIMIZER$main.coverage" NAME="main Coverage Results" MODIFIED="1586169679429" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/AUTOPTIMIZER$stator.coverage" NAME="stator Coverage Results" MODIFIED="1586362939163" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/root_folder/geometry_generator/stator_geometry" />
+    <SUITE FILE_PATH="coverage/AUTOPTIMIZER$sizing_parameters.coverage" NAME="sizing_parameters Coverage Results" MODIFIED="1586350530456" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/root_folder/geometry_generator/general_sizing" />
+    <SUITE FILE_PATH="coverage/AUTOPTIMIZER$__main____1_.coverage" NAME="__main__ (1) Coverage Results" MODIFIED="1586173919079" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/root_folder/main_files" />
+    <SUITE FILE_PATH="coverage/AUTOPTIMIZER$main__1_.coverage" NAME="main (1) Coverage Results" MODIFIED="1588865717634" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/root_folder/main_files" />
+    <SUITE FILE_PATH="coverage/AUTOPTIMIZER$vector_parameters.coverage" NAME="vector_parameters Coverage Results" MODIFIED="1586168046178" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/program_data/variable_parameters_data" />
+    <SUITE FILE_PATH="coverage/AUTOPTIMIZER$rough2.coverage" NAME="rough2 Coverage Results" MODIFIED="1588853586379" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/root_folder/main_files" />
+    <SUITE FILE_PATH="coverage/AUTOPTIMIZER$Rough.coverage" NAME="Rough Coverage Results" MODIFIED="1588854909112" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/root_folder/main_files" />
+  </component>
+</project>

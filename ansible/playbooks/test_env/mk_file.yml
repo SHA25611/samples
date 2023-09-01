@@ -1,0 +1,18 @@
+---
+
+ # This script makes a file on a single server
+ # which is given at the place of host directive in a play.
+ # The host is hardcoded insted of taking from invenotry.
+  
+   # Play1 - To make a file in /wlsadm  directory of remote server
+   - name: Create file on remote server
+     hosts: 172.31.29.149  # a hardcoded ip address
+     
+     tasks:
+       - name: Use file module to create a file 
+         file:
+           path: /wlsadm/mk_file_play.txt
+           state: touch
+           mode: '1755'
+
+...

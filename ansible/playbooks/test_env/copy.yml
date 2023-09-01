@@ -1,0 +1,9 @@
+
+---
+   # Play to copy files from control node to target node
+   - name: copy file from control to target 
+     hosts: target-host-02
+     tasks:
+        - name: use ansible copy module
+          copy: src=/tmp/wls/weblogic.jar dest=/tmp/
+...

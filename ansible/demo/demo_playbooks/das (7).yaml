@@ -1,0 +1,17 @@
+---
+- hosts: "{{ categ }}-australia"
+#  any_errors_fatal: true
+  user: root
+  
+  tasks:
+
+
+    - name: Loop against employee names
+      include_tasks: "{{ playbook_dir }}/empdet.yml"
+      loop:
+        - Rahul
+        - Santosh
+        - Prasad
+        - Yogeshwarbhai
+
+

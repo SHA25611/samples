@@ -1,0 +1,5 @@
+        - debug:
+            msg: "First Task Printing the name {{ item }}"
+
+        - debug:
+            msg: "Second Task Printing the name {{ item }}"

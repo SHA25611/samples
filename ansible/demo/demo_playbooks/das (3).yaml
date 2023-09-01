@@ -1,0 +1,55 @@
+---
+- hosts: "prod-australia"
+#  any_errors_fatal: true
+  user: root
+  
+  tasks:
+
+    # emit a debug message containing the content of each file.
+    - debug:
+        msg: "{{ item }}"
+      with_file:
+        - /tmp/first.out
+        - /tmp/second.out
+
+    - debug:
+        msg: "Files under /tmp are {{ item }}"
+      with_fileglob:
+        - /tmp/*
+
+    - raw: ls /tmp/*
+      register: fileundertmp
+
+    - debug:
+        msg: "Files under /tmp on {{ inventory_hostname }} is: {{ item }}"
+      with_items: "{{ fileundertmp.stdout_lines }}"
+
+    - stat:
+        path: /tmp/first.out
+      register: filedet
+      when: inventory_hostname == '20.204.75.114'
+
+    - debug:
+        msg: "The size of the file is {{ filedet.stat.size }}"
+      when: inventory_hostname == '20.204.75.114'
+
+#    - block:
+
+#        - debug:
+#            msg: "First Task Printing the name {{ item }}"
+
+#        - debug:
+#            msg: "Second Task Printing the name {{ item }}"
+
+    - debug:
+        msg: "The Directory is: {{ playbook_dir }}"
+      run_once: true
+
+    - include_tasks: "{{ playbook_dir }}/includedmytask.yml"
+         
+      loop: 
+        - 'Prashanta'
+        - 'Vibhor'
+        - 'Rahul' 
+      when: inventory_hostname == '20.204.75.114'
+

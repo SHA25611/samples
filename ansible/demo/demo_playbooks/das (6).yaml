@@ -1,0 +1,18 @@
+---
+- hosts: "{{ categ }}-australia"
+#  any_errors_fatal: true
+  user: root
+  
+  tasks:
+
+
+    - name: Check if Jenkins is Running
+      wait_for:
+        port: 8080
+        host: '{{ inventory_hostname }}'
+        delay: 5
+        timeout: 10
+        state: present
+        msg: "You are connected to Jenkins"
+
+

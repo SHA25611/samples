@@ -1,0 +1,9 @@
+---
+
+admin_server: 10.190.0.3
+managed_servers:
+     - 10.190.0.4
+     - 10.190.0.5
+domain_name: wl_domain_3
+boot_identity_location: /wlsadm/ORACLE_HOME/user_projects/domains/wl_domain_3/servers/wl_admin_server_3/
+...

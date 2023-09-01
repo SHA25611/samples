@@ -1,0 +1,131 @@
+---
+
+# This playbook is responsible for installation of weblogic binaries on the remote
+# host. It contains all the plays that are required after the configuration of the
+# newly added remote host. User for this playbook is wlsadm.
+  
+  # importing configuration playbook
+  - name: Executing the configuration playbook before installation
+    import_playbook: /etc/ansible/playbooks/test_env/configure_remote_host_v3.yml 
+ 
+  # Play1 - To transfer the neccessary weblogic and java installer files from control center to remote host
+  - name: Transfering the archive weblogic and java files on remote host
+    hosts: new_addition
+
+    tasks:
+
+      - name: using ansible copy module to transfer weblogic jar file
+        copy:
+          src: /home/wlsadm/fmw_12.2.1.4.0_wls_Disk1_1of1.zip
+          dest: /wlsadm/weblogic/
+          owner: wlsadm
+          group: weblogic
+          mode: '1755'
+
+      - name: using copy module to transfer java jar file
+        copy:
+          src: /home/wlsadm/jdk-8u301-linux-x64.tar.gz
+          dest: /wlsadm/java/
+          owner: wlsadm
+          group: weblogic
+          mode: '1755'
+  # Play2 - To unpack the installation files, we also need to check if neccessary commands are available or not
+  - name: Checking if zip/unzip and gzip/gunzip are installed or not on the remote host
+    hosts: new_addition
+    vars:
+     ansible_become_pass: solarflare@123!   # ansible_become_pass is special pre defined variable and should be always declared this way for sudo switching
+    become: yes
+    become_user: root
+
+    tasks:
+      - name: Performing check for zip/unzip/gzip/gunzip command
+        yum: 
+          name:
+            - zip
+            - unzip
+            - gzip
+          state: present
+
+  # Play3 - To unarchive the weblogic and java jar files
+  - name: performing unrachive as wlsadm user
+    hosts: new_addition
+    
+    tasks: 
+      - name: Performing the unarchiving of weblogic jar files
+        unarchive:
+           src: /wlsadm/weblogic/fmw_12.2.1.4.0_wls_Disk1_1of1.zip
+           dest: /wlsadm/weblogic/
+           remote_src: yes
+           mode: '1755'
+
+      - name: Performing unarchiving of jdk
+        unarchive:
+           src: /wlsadm/java/jdk-8u301-linux-x64.tar.gz
+           dest: /wlsadm/java/
+           remote_src: yes
+           mode: '1755'
+
+  # Play4 - To create the response file and inventory lock file for binaries installation
+  - name: Creating wlinstall.rsp/oraInst.loc file
+    hosts: new_addition  
+
+    tasks:
+      - name: Creating empty response file using touch
+        file:
+          path: /wlsadm/wlsinstall.rsp
+          state: touch
+          mode: '1755'
+
+      - name: Adding content to the rsp file
+        copy: 
+          dest: /wlsadm/wlsinstall.rsp
+          content: |
+                 [ENGINE]
+                 Response File Version=1.0.0.0.0
+                 [GENERIC]
+                 ORACLE_HOME=/wlsadm/ORACLE_HOME
+                 INSTALL_TYPE=WebLogic Server
+         
+      - name: Creating empty inventory lock file using touch
+        file:
+          path: /wlsadm/inventory/oraInst.loc
+          state: touch
+          mode: '1755'
+
+      - name: Adding content to loc file
+        copy:
+          dest: /wlsadm/inventory/oraInst.loc
+          content: |
+             inventory_loc=/wlsadm/inventory
+             inst_group=weblogic
+
+  # Play5 - To set environment variables and initiating installation
+  - name: Setting JAVA_HOME and PATH variable and launching installer
+    hosts: new_addition
+    # environment: 
+    #    JAVA_HOME: /wlsadm/java/jdk1.8.0_301
+
+    tasks:
+     # - name: Setting JAVA_HOME
+     #   shell:
+     #     " export JAVA_HOME=/wlsadm/java/jdk1.8.0_301 "
+     #   register: JAVA_HOME_PTH
+ 
+     # - name: Setting PATH
+     #   shell:
+     #     " export PATH=$JAVA_HOME/bin:$PATH "
+     #   register: PATH_vr
+
+      - name: Launching installer
+        shell: |
+           export JAVA_HOME=/wlsadm/java/jdk1.8.0_301 
+           export PATH=$JAVA_HOME/bin:$PATH 
+           java -jar /wlsadm/weblogic/fmw_12.2.1.4.0_wls.jar -silent -responseFile /wlsadm/wlsinstall.rsp -invPtrLoc /wlsadm/inventory/oraInst.loc 
+        register: install_op
+
+      - name: using debug module to get outputs
+        debug:
+          msg: | 
+           "{{ install_op }}"
+     
+...  

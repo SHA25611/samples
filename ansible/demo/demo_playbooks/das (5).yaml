@@ -1,0 +1,74 @@
+---
+- hosts: "{{ categ }}-australia"
+#  any_errors_fatal: true
+  user: root
+#  vars:
+#    wlshome: /app/weblogic/vodafone/prod
+#    jdkhome: /app/jdk/prod
+  
+  tasks:
+
+    - include_vars: "{{ playbook_dir }}/myenv_{{ myenv }}.yml"
+
+    - file:
+        path: "{{ wlshome }}/bin"
+        state: directory
+        mode: '0755'
+  
+
+    - template:
+        src: "{{ playbook_dir }}/templates/startweb.sh.j2"
+        dest: "{{ wlshome }}/bin/startweb.sh"
+        owner: cc-user
+        group: cc-user
+        mode: 0744
+
+    - block:
+
+      - debug: 
+          msg: " WebLogic Home is: {{ wlshome }}"
+
+      - debug:
+          msg: " JDK Home is: {{ jdkhome }}"
+
+      run_once: true
+
+- hosts: "{{ categ }}-australia"
+  user: root
+
+  tasks:
+
+    - include_vars: "{{ playbook_dir }}/myenv_{{ myenv }}.yml"
+
+    - file:
+        path: "{{ wlshome }}/bin"
+        state: directory
+        mode: '0755'
+
+
+    - template:
+        src: "{{ playbook_dir }}/templates/startweb.sh.j2"
+        dest: "{{ wlshome }}/bin/startweb.sh"
+        owner: cc-user
+        group: cc-user
+        mode: 0744
+
+
+    - block:
+
+      - debug:
+          msg: " WebLogic Home is: {{ hostvars[groups['prod-australia'][0]]['wlshome'] }}"
+
+      - debug:
+          msg: " JDK Home is: {{  hostvars[groups['prod-australia'][0]]['wlshome'] }}"
+
+      run_once: true
+
+    - set_fact:
+        myserviceuser: wlsadmin
+
+    - debug:
+        msg: "User is {{ myserviceuser }}"
+      run_once: true
+
+    

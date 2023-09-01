@@ -1,0 +1,15 @@
+---
+- hosts: "{{ myenv }}-australia"
+  user: root
+  
+  tasks:
+
+    - name: list files in folder in /vishal
+      command: which python3.8
+      register: thisisoutputofls
+#      no_log: yes
+
+    - debug:
+        msg: "The server {{ inventory_hostname }} has python3.8 on this location {{ thisisoutputofls.stdout }}"
+
+

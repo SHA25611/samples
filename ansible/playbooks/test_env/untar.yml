@@ -1,0 +1,9 @@
+
+---
+   # Play to unzip file
+   - name: unzip and untar file  
+     hosts: target-host-02
+     tasks:
+        - name: untar file
+          shell: "tar xvfz{{/tmp}}/{{/weblogic.jar}}"
+...

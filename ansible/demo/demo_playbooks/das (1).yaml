@@ -1,0 +1,40 @@
+---
+- hosts: "prod-australia"
+#  any_errors_fatal: true
+  user: root
+  
+  tasks:
+
+
+    - name: Validating if the WebServer is UP and OPENED the PORT
+#      local_action: 
+#        module: wait_for
+      wait_for:
+        host: "20.204.70.213"
+        port: "80"
+        delay: 2
+        timeout: 5
+        state: started
+        msg: "WebServer PORT is not Listening"
+      register: amvalidate1
+#      delegate_to: localhost
+      ignore_errors: true        
+
+    - name: Print hostname
+      command: hostname
+      register: myhost
+      when: inventory_hostname == '52.140.113.192'
+#      delegate_to: localhost
+
+    - debug:
+        msg: "OS is {{ ansible_distribution }}" 
+
+    - debug:
+        msg: "this task ran on {{ myhost.stdout }}"
+      when: inventory_hostname == '52.140.113.192'
+
+    - debug:
+        msg: " I will now start my Databases"
+
+
+
